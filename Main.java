@@ -19,18 +19,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        elipticCurve test = new elipticCurve(2, 2, 17);
-        LinkedList<Point> tescik;
 
-        tescik = test.countPoints();
-        for(Point p: tescik){
-            p.display();
-            if(p.y!=0) {
-            System.out.println(" ");
-            test.countOrder(p);
-                System.out.println(" ");
-            }
-        }
 
 //        test.countOrder(new Point(1,6));
 
@@ -45,8 +34,23 @@ public class Main {
 
         submit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println(form.getText(0) + " " + form.getText(1) + ". " + form.getText(2)
-                        + ", age " + form.getText(3));
+                int a = Integer.parseInt(form.getText(0));
+                int b = Integer.parseInt(form.getText(1));
+                int prime = Integer.parseInt(form.getText(2));
+
+                elipticCurve test = new elipticCurve(a, b, prime);
+                LinkedList<Point> tescik;
+
+                tescik = test.countPoints();
+                for(Point point: tescik){
+                    point.display();
+                    if(point.y!=0) {
+                        System.out.println(" ");
+                        test.countOrder(point);
+                        System.out.println(" ");
+                    }
+                }
+
             }
         });
 
@@ -58,6 +62,7 @@ public class Main {
         f.getContentPane().add(p, BorderLayout.SOUTH);
         f.pack();
         f.setVisible(true);
+
     }
        //Entry_Window window = new Entry_Window();
     }
