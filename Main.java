@@ -30,7 +30,7 @@ public class Main {
 
         final Entry_Window form = new Entry_Window(labels, mnemonics, widths, descs);
 
-        JButton submit = new JButton("Submit Form");
+        JButton submit = new JButton("Oblicz");
 
         submit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
